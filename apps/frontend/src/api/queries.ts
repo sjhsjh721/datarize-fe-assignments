@@ -1,9 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
 import { apiClient } from './client';
-import type { PriceRange, Customer, CustomerPurchase, QueryParams } from '@/types';
+import type { 
+  PriceRange, 
+  Customer, 
+  CustomerPurchase, 
+  PurchaseFrequencyParams,
+  CustomersParams 
+} from '@/types';
 
 // Fetch purchase frequency data
-export const usePurchaseFrequency = (params?: Pick<QueryParams, 'from' | 'to'>) => {
+export const usePurchaseFrequency = (params?: PurchaseFrequencyParams) => {
   return useQuery<PriceRange[]>({
     queryKey: ['purchaseFrequency', params],
     queryFn: async () => {
@@ -14,7 +20,7 @@ export const usePurchaseFrequency = (params?: Pick<QueryParams, 'from' | 'to'>) 
 };
 
 // Fetch customers data
-export const useCustomers = (params?: Pick<QueryParams, 'sortBy' | 'name'>) => {
+export const useCustomers = (params?: CustomersParams) => {
   return useQuery<Customer[]>({
     queryKey: ['customers', params],
     queryFn: async () => {
