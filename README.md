@@ -20,12 +20,49 @@
 **제출 시에는 fork된 본인의 레포지토리 링크를 첨부하여 메일로 회신 주시면 확인하겠습니다 :) (원본 저장소에 PR 금지)**
 **README 파일에 프로젝트 설정 및 실행 방법을 포함하세요.**
 
+## 프로젝트 실행 방법
+
+### 1. 의존성 설치 및 서버 실행
 ```cmd
 cd apps
 yarn install
 yarn start-server
 yarn start-client
 ```
+
+### 2. 테스트 실행
+```cmd
+cd apps/frontend
+yarn test          # 테스트 실행
+yarn test:ui       # 테스트 UI로 실행
+yarn test:coverage # 커버리지 포함 테스트
+```
+
+### 3. 접속
+- 프론트엔드: http://localhost:5173
+- 백엔드 API: http://localhost:4000
+
+## 구현된 기능
+
+### ✅ 완료된 요구사항
+- **가격대별 구매 빈도 차트**: Recharts를 사용한 바 차트, 월별 필터링
+- **고객 목록 및 검색**: 정렬(ID/구매금액), 이름 검색, 반응형 테이블
+- **고객별 상세 구매 내역**: 모달, 상품 썸네일, 구매 정보
+
+### 🛠 기술 스택
+- **Frontend**: React 18, TypeScript, Vite
+- **UI**: Tailwind CSS, shadcn/ui, Radix UI
+- **상태관리**: React Query (TanStack Query)
+- **차트**: Recharts
+- **HTTP**: Axios
+- **테스트**: Vitest, Testing Library
+- **날짜**: date-fns
+
+### 🧪 테스트 구현
+- **유닛 테스트**: 유틸리티 함수, 타입 정의
+- **컴포넌트 테스트**: UI 컴포넌트 렌더링 및 상호작용
+- **API 테스트**: HTTP 클라이언트 설정 검증
+- **타입 안전성**: TypeScript 컴파일 타임 검증
 
 ### 요구 사항
 
